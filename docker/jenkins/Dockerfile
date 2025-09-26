@@ -20,7 +20,7 @@ RUN mkdir -p /usr/share/jenkins/ref/init.groovy.d
 
 COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/tcp-slave-angent-port.groovy
 
-ENV JENKINS_VERSION 1.601
+ENV JENKINS_VERSION 2.528
 
 # could use ADD but this one does not check Last-Modified header
 # see https://github.com/docker/docker/issues/8331
@@ -33,7 +33,7 @@ RUN chown -R jenkins "$JENKINS_HOME" /usr/share/jenkins/ref
 EXPOSE 8080
 
 # will be used by attached slave agents:
-EXPOSE 50000
+EXPOSE 51000
 
 COPY jenkins.sh /usr/local/bin/jenkins.sh
 
